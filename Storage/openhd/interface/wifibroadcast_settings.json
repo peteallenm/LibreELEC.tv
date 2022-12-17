@@ -1,0 +1,13 @@
+{
+    "enable_wb_video_variable_bitrate": false,
+    "wb_channel_width": 20,
+    "wb_enable_ldpc": false,
+    "wb_enable_short_guard": false,
+    "wb_enable_stbc": false,
+    "wb_frequency": 5180,
+    "wb_mcs_index": 3,
+    "wb_tx_power_level": "LOW",
+    "wb_tx_power_milli_watt": 25,
+    "wb_video_fec_block_length": 12,
+    "wb_video_fec_percentage": 20
+}

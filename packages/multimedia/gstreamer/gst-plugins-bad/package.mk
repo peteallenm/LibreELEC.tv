@@ -2,12 +2,13 @@
 # Copyright (C) 2022-present Team LibreELEC (https://libreelec.tv)
 
 PKG_NAME="gst-plugins-bad"
-PKG_VERSION="1.21.3"
-PKG_SHA256="4f7c9620e3b4bd6e868b6341af4738952f696c761755db1535d5372f0003ca48"
+PKG_VERSION="1.21.1"
+PKG_SHA256="a507346ab14788de651845d15be776cf793b9312c9b13b37d0e86071f8285fcf"
 PKG_LICENSE="LGPL-2.1-or-later"
 PKG_SITE="https://gstreamer.freedesktop.org/modules/gst-plugins-bad.html"
-PKG_URL="https://gstreamer.freedesktop.org/src/gst-plugins-bad/${PKG_NAME}-${PKG_VERSION}.tar.xz"
-PKG_DEPENDS_TARGET="toolchain gst-plugins-base"
+#PKG_URL="https://gstreamer.freedesktop.org/src/gst-plugins-bad/${PKG_NAME}-${PKG_VERSION}.tar.xz"
+PKG_URL="https://www.dropbox.com/s/6si0enqq9kf4f8e/gst-plugins-bad-1.21.1-pete.tar.gz"
+PKG_DEPENDS_TARGET="toolchain gst-plugins-base libgudev rtmpdump openh264"
 PKG_LONGDESC="GStreamer Bad Plug-ins is a set of plug-ins that aren't up to par compared to the rest."
 
 pre_configure_target() {
@@ -23,7 +24,7 @@ pre_configure_target() {
                          -Daudiomixmatrix=disabled \
                          -Daudiovisualizers=disabled \
                          -Dautoconvert=disabled \
-                         -Dbayer=disabled \
+                         -Dbayer=enabled \
                          -Dcamerabin2=disabled \
                          -Dcoloreffects=disabled \
                          -Ddebugutils=disabled \
@@ -47,13 +48,13 @@ pre_configure_target() {
                          -Djpegformat=disabled \
                          -Dlibrfb=disabled \
                          -Dmidi=disabled \
-                         -Dmpegdemux=disabled \
-                         -Dmpegpsmux=disabled \
+                         -Dmpegdemux=enabled \
+                         -Dmpegpsmux=enabled \
                          -Dmpegtsdemux=disabled \
                          -Dmpegtsmux=disabled \
                          -Dmxf=disabled \
                          -Dnetsim=disabled \
-                         -Donvif=disabled \
+                         -Donvif=enabled \
                          -Dpcapparse=disabled \
                          -Dpnm=disabled \
                          -Dproxy=disabled \
@@ -61,19 +62,19 @@ pre_configure_target() {
                          -Dremovesilence=disabled \
                          -Drist=disabled \
                          -Drtmp2=disabled \
-                         -Drtp=disabled \
-                         -Dsdp=disabled \
+                         -Drtp=enabled \
+                         -Dsdp=enabled \
                          -Dsegmentclip=disabled \
                          -Dsiren=disabled \
                          -Dsmooth=disabled \
                          -Dspeed=disabled \
-                         -Dsubenc=disabled \
-                         -Dswitchbin=disabled \
-                         -Dtimecode=disabled \
+                         -Dsubenc=enabled \
+                         -Dswitchbin=enabled\
+                         -Dtimecode=enabled \
                          -Dvideofilters=disabled \
                          -Dvideoframe_audiolevel=disabled \
                          -Dvideoparsers=enabled \
-                         -Dvideosignal=disabled \
+                         -Dvideosignal=enabled \
                          -Dvmnc=disabled \
                          -Dy4m=disabled \
                          -Dopencv=disabled \
@@ -104,7 +105,7 @@ pre_configure_target() {
                          -Ddvb=disabled \
                          -Dfaac=disabled \
                          -Dfaad=disabled \
-                         -Dfbdev=disabled \
+                         -Dfbdev=enabled \
                          -Dfdkaac=disabled \
                          -Dflite=disabled \
                          -Dfluidsynth=disabled \
@@ -114,7 +115,7 @@ pre_configure_target() {
                          -Dipcpipeline=disabled \
                          -Diqa=disabled \
                          -Dkate=disabled \
-                         -Dkms=disabled \
+                         -Dkms=enabled \
                          -Dladspa=disabled \
                          -Dlibde265=disabled \
                          -Dlv2=disabled \
@@ -129,7 +130,7 @@ pre_configure_target() {
                          -Dnvcodec=disabled \
                          -Dopenal=disabled \
                          -Dopenexr=disabled \
-                         -Dopenh264=disabled \
+                         -Dopenh264=enabled \
                          -Dopenjpeg=disabled \
                          -Dopenmpt=disabled \
                          -Dopenni2=disabled \
@@ -137,10 +138,10 @@ pre_configure_target() {
                          -Dopus=disabled \
                          -Dresindvd=disabled \
                          -Drsvg=disabled \
-                         -Drtmp=disabled \
+                         -Drtmp=enabled \
                          -Dsbc=disabled \
                          -Dsctp=disabled \
-                         -Dshm=disabled \
+                         -Dshm=enabled \
                          -Dsmoothstreaming=disabled \
                          -Dsndfile=disabled \
                          -Dsoundtouch=disabled \
@@ -150,7 +151,7 @@ pre_configure_target() {
                          -Dsvthevcenc=disabled \
                          -Dteletext=disabled \
                          -Dtinyalsa=disabled \
-                         -Dtranscode=disabled \
+                         -Dtranscode=enabled \
                          -Dttml=disabled \
                          -Duvch264=disabled \
                          -Dva=disabled \
@@ -170,7 +171,7 @@ pre_configure_target() {
                          -Dzxing=disabled \
                          -Dwpe=disabled \
                          -Dmagicleap=disabled \
-                         -Dv4l2codecs=disabled \
+                         -Dv4l2codecs=enabled \
                          -Dhls=disabled \
                          -Dsctp-internal-usrsctp=disabled \
                          -Dexamples=disabled \
@@ -186,15 +187,15 @@ pre_configure_target() {
                          -Ddoc=disabled"
 }
 
-post_makeinstall_target() {
+#post_makeinstall_target() {
   # clean up
-  safe_remove ${INSTALL}/usr/bin
-  for PKG_GST_PLUGINS_BAD in \
-    libgstadaptivedemux libgstbadaudio libgstbasecamerabinsrc libgstcodecs \
-    libgstinsertbin libgstisoff libgstmpegts libgstphotography libgstplayer \
-    libgstsctp libgsttranscoder libgsturidownloader libgstwebrtc
-  do
-    safe_remove ${INSTALL}/usr/lib/${PKG_GST_PLUGINS_BAD}-1.0*
-  done
-  safe_remove ${INSTALL}/usr/share
-}
+#  safe_remove ${INSTALL}/usr/bin
+#  for PKG_GST_PLUGINS_BAD in \
+ #   libgstadaptivedemux libgstbadaudio libgstbasecamerabinsrc libgstcodecs \
+ #   libgstinsertbin libgstisoff libgstmpegts libgstphotography libgstplayer \
+ #   libgstsctp libgsttranscoder libgsturidownloader libgstwebrtc
+ # do
+ #   safe_remove ${INSTALL}/usr/lib/${PKG_GST_PLUGINS_BAD}-1.0*
+ # done
+ # safe_remove ${INSTALL}/usr/share
+#}

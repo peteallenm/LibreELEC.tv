@@ -1,0 +1,6 @@
+PKG_NAME="openh264"
+PKG_VERSION="2.3.1"
+PKG_SHA256="453afa66dacb560bc5fd0468aabee90c483741571bca820a39a1c07f0362dc32"
+PKG_SITE="http://openh264.org"
+PKG_URL="https://github.com/cisco/openh264/archive/refs/tags/v2.3.1.tar.gz"
+PKG_DEPENDS_TARGET="toolchain"

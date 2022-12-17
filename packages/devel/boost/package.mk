@@ -3,8 +3,8 @@
 # Copyright (C) 2019-present Team LibreELEC (https://libreelec.tv)
 
 PKG_NAME="boost"
-PKG_VERSION="1.81.0"
-PKG_SHA256="71feeed900fbccca04a3b4f2f84a7c217186f28a940ed8b7ed4725986baf99fa"
+PKG_VERSION="1.80.0"
+PKG_SHA256="1e19565d82e43bc59209a168f5ac899d3ba471d55c7610c677d4ccf2c9c500c0"
 PKG_LICENSE="OSS"
 PKG_SITE="https://www.boost.org/"
 PKG_URL="https://boostorg.jfrog.io/artifactory/main/release/${PKG_VERSION}/source/${PKG_NAME}_${PKG_VERSION//./_}.tar.bz2"
@@ -45,7 +45,7 @@ makeinstall_target() {
   ${TOOLCHAIN}/bin/b2 -d2 --ignore-site-config \
                       --layout=system \
                       --prefix=${SYSROOT_PREFIX}/usr \
-                      --toolset=gcc link=static \
+                      --toolset=gcc \
                       --with-chrono \
                       --with-date_time \
                       --with-filesystem \
@@ -56,5 +56,36 @@ makeinstall_target() {
                       --with-serialization \
                       --with-system \
                       --with-thread \
+                      install  
+${TOOLCHAIN}/bin/b2 -d2 --ignore-site-config \
+                      --layout=system \
+                      --prefix=${SYSROOT_PREFIX}/usr \
+                      --toolset=gcc \
+                      --with-chrono \
+                      --with-date_time \
+                      --with-filesystem \
+                      --with-iostreams \
+                      --with-python \
+                      --with-random \
+                      --with-regex -sICU_PATH="/build/build.LibreELEC-H3.arm-11.0-devel/toolchain/armv7ve-libreelec-linux-gnueabihf/sysroot/usr/" \
+                      --with-serialization \
+                      --with-system \
+                      --with-thread \
                       install
+${TOOLCHAIN}/bin/b2 -d2 --ignore-site-config \
+                      --layout=system \
+                      --prefix=${SYSROOT_PREFIX}/usr \
+                      --toolset=gcc \
+                      --with-chrono \
+                      --with-date_time \
+                      --with-filesystem \
+                      --with-iostreams \
+                      --with-python \
+                      --with-random \
+                      --with-regex -sICU_PATH="/build/build.LibreELEC-H3.arm-11.0-devel/image/system/usr/" \
+                      --with-serialization \
+                      --with-system \
+                      --with-thread \
+                      install
+
 }

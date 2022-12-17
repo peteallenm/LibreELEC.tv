@@ -1,0 +1,7 @@
+PKG_NAME="wifibroadcast"
+PKG_VERSION="1"
+PKG_SHA256="a22982283d3498ede56c47fa15535bb62fe1715249079a08f74fb34c66f4c43a"
+PKG_SITE="https://github.com/OpenHD/Open.HD"
+PKG_URL="https://www.dropbox.com/s/03dxki9abv3rc6j/wifibroadcast_1.0.tgz"
+PKG_DEPENDS_TARGET="toolchain libpcap libsodium spdlog"
+#PKG_DEPENDS_TARGET="toolchain libpcap libsodium"

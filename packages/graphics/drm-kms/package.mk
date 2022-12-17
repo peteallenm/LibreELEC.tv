@@ -1,0 +1,7 @@
+PKG_NAME="drm-kms"
+PKG_VERSION="1"
+PKG_SHA256="87343726716c704f038aa564f8a601f09d079b47842b8bd4eb74e6c2da7272f4"
+PKG_SITE="https://github.com/mdasoh/drm-kms"
+PKG_URL="https://github.com/mdasoh/drm-kms/archive/refs/heads/master.tar.gz"
+PKG_DEPENDS_TARGET="toolchain libdrm"
+PKG_TOOLCHAIN="make"

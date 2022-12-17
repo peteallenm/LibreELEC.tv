@@ -1,0 +1,28 @@
+---
+ drivers/gpu/drm/sun4i/sun8i_mixer.c | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+--- a/drivers/gpu/drm/drm_atomic_helper.c
++++ b/drivers/gpu/drm/drm_atomic_helper.c
+--- 
+@@ -3012,7 +3012,7 @@
+ 	if (plane == crtc->cursor)
+ 		state->legacy_cursor_update = true;
+ 
+-	ret = drm_atomic_commit(state);
++	ret = drm_atomic_nonblocking_commit(state);
+ fail:
+ 	drm_atomic_state_put(state);
+ 	return ret;
+--- a/drivers/gpu/drm/drm_atomic_helper.c
++++ b/drivers/gpu/drm/drm_atomic_helper.c
+--- 
+@@ -3100,7 +3100,7 @@
+	if (ret)
+		goto fail;
+
+-	ret = drm_atomic_commit(state);
++	ret = drm_atomic_nonblocking_commit(state);
+
+ fail:
+	drm_atomic_state_put(state);

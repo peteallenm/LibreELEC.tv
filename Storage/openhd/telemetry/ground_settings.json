@@ -1,0 +1,5 @@
+{
+    "enable_rc_over_joystick": false,
+    "rc_channel_mapping": "0,1,2,3,4,5,6,7",
+    "rc_over_joystick_update_rate_hz": 10
+}

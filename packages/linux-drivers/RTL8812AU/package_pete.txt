@@ -1,0 +1,35 @@
+# SPDX-License-Identifier: GPL-2.0-or-later
+# Copyright (C) 2009-2016 Stephan Raue (stephan@openelec.tv)
+# Copyright (C) 2018-present Team LibreELEC (https://libreelec.tv)
+
+PKG_NAME="RTL8812AU"
+PKG_VERSION="v5.6.4.2-pete"
+PKG_SHA256="858704c315e2ec421ae567ee0fe281edbc16327b3f48d0d2924a6c9ef81003e2"
+PKG_LICENSE="GPL"
+PKG_SITE="https://github.com/svpcom/rtl8812au"
+#PKG_URL="https://github.com/svpcom/rtl8812au/archive/refs/heads/${PKG_VERSION}.tar.gz"
+PKG_URL="https://www.dropbox.com/s/y11teip5l4td2mf/rtl8812au-v5.6.4.2-pete.tar.gz"
+PKG_LONGDESC="Realtek RTL8812AU Linux driver for WifiBroadcast"
+PKG_IS_KERNEL_PKG="yes"
+
+pre_make_target() {
+  unset LDFLAGS
+}
+
+make_target() {
+  make V=1 \
+       ARCH=${TARGET_KERNEL_ARCH} \
+       KSRC=$(kernel_path) \
+       USER_EXTRA_CFLAGS=-Wno-cast-function-type -Wno-address -Wno-discarded-qualifiers  -Wno-implicit-function-declaration \
+       CROSS_COMPILE=${TARGET_KERNEL_PREFIX} \
+       CONFIG_POWER_SAVING=n \
+       CONFIG_PLATFORM_I386_PC=n \
+       CONFIG_PLATFORM_ARM_RPI=y \
+       CONFIG_RTL8821A=n \
+       CONFIG_RTL8814A=n
+}
+
+makeinstall_target() {
+  mkdir -p ${INSTALL}/$(get_full_module_dir)/${PKG_NAME}
+    cp *.ko ${INSTALL}/$(get_full_module_dir)/${PKG_NAME}
+}

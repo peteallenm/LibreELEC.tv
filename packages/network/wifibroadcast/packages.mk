@@ -1,0 +1,6 @@
+PKG_NAME="wifibroadcast"
+PKG_VERSION="1"
+PKG_SHA256="0d06b21170d20c93e4f0534dbb9b0a8b4f1119ffb00b4031aaeb5b9148b686aa"
+PKG_SITE="https://github.com/OpenHD/Open.HD"
+PKG_URL="https://www.dropbox.com/s/03dxki9abv3rc6j/wifibroadcast_1.0.tgz"
+PKG_DEPENDS_TARGET="toolchain libpcap"
