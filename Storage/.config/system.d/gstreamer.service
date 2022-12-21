@@ -1,0 +1,12 @@
+[Unit]
+Description=GStreamer
+After=openhd.service
+
+[Service]
+ExecStart=/bin/sh /storage/gstreamer_rx_queue.sh
+Restart=always
+RestartSec=3
+
+
+[Install]
+WantedBy=multi-user.target

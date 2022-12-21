@@ -1,0 +1,6 @@
+PKG_NAME="libsodium2"
+PKG_VERSION="1.0.18-stable"
+PKG_SHA256="81dbea48d1e318379ba1c2b9ffd67679468eb7d7bba6a5033c8b6376b7f97398"
+PKG_SITE="https://download.libsodium.org/"
+PKG_URL="https://download.libsodium.org/libsodium/releases/libsodium-1.0.18-stable.tar.gz"
+PKG_DEPENDS_TARGET="toolchain "
