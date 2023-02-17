@@ -67,7 +67,7 @@ ${TOOLCHAIN}/bin/b2 -d2 --ignore-site-config \
                       --with-iostreams \
                       --with-python \
                       --with-random \
-                      --with-regex -sICU_PATH="/build/build.LibreELEC-H3.arm-11.0-devel/toolchain/armv7ve-libreelec-linux-gnueabihf/sysroot/usr/" \
+                      --with-regex -sICU_PATH="/build/build.LibreELEC-H2-plus.arm-11.0-devel/toolchain/armv7ve-libreelec-linux-gnueabihf/sysroot/usr/" \
                       --with-serialization \
                       --with-system \
                       --with-thread \
@@ -82,7 +82,7 @@ ${TOOLCHAIN}/bin/b2 -d2 --ignore-site-config \
                       --with-iostreams \
                       --with-python \
                       --with-random \
-                      --with-regex -sICU_PATH="/build/build.LibreELEC-H3.arm-11.0-devel/image/system/usr/" \
+                      --with-regex -sICU_PATH="/build/build.LibreELEC-H2-plus.arm-11.0-devel/image/system/usr/" \
                       --with-serialization \
                       --with-system \
                       --with-thread \

@@ -49,6 +49,11 @@ devices = \
         'config': 'bananapi_m2_zero_defconfig',
         'crust_config': 'orangepi_one_defconfig'
       },
+     'orange-pi-one': {
+        'dtb': 'sun8i-h3-orangepi-one.dtb',
+        'config': 'orangepi_one_defconfig',
+        'crust_config': 'orangepi_one_defconfig'
+      },
     },
     'H3': {
       'bananapi-m2p': {

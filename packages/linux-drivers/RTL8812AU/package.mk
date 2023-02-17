@@ -4,7 +4,7 @@
 
 PKG_NAME="RTL8812AU"
 PKG_VERSION="e7a4a390ccbdd768411e1b2a8922c47837f76b47"
-PKG_SHA256="5c5045629e14113c94afaf729131747c3c4d9cce7c0c094814adead3b53d838c"
+PKG_SHA256="66efce15f4220cc6b758666c7150ec0c9761ed3fefd3040462cbfbd36f94fb9e"
 PKG_LICENSE="GPL"
 PKG_SITE="https://github.com/aircrack-ng/rtl8812au"
 #PKG_URL="https://github.com/aircrack-ng/rtl8812au/archive/${PKG_VERSION}.tar.gz"

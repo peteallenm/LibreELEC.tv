@@ -15,7 +15,7 @@ gst-launch-1.0 filesrc location="OpenHDVideoParsed.mkv" ! matroskademux ! h264pa
 
 gunzip -c LibreELEC-H3.arm-11.0-devel-20221104215136-39f6b92-orangepi-pc.img.gz | sudo dd of=/dev/mmcblk0 bs=1M
 
-To go straight to console, append textmode to the kernel command line         
+To go straight to console, append textmode,video=854x480 to the kernel command line         
 
 planes can be listed by looking in /sys/kernel/debug/dri/0/state
 echo 0xf > /sys/module/drm/parameters/debug enables drm debug

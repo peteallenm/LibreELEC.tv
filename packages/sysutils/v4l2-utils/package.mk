@@ -42,9 +42,9 @@ makeinstall_target() {
   # make install DESTDIR=${INSTALL} PREFIX=/usr -C utils/dvb
   # make install DESTDIR=${INSTALL} PREFIX=/usr -C utils/v4l2-ctl
 
-  make install DESTDIR=/build/build.LibreELEC-H3.arm-11.0-devel/toolchain/armv7ve-libreelec-linux-gnueabihf/sysroot/ PREFIX=/usr -C lib
+  make install DESTDIR=/build/build.LibreELEC-H2-plus.arm-11.0-devel/toolchain/armv7ve-libreelec-linux-gnueabihf/sysroot/ PREFIX=/usr -C lib
   if [ "${LIBREELEC_VERSION}" == "devel" ]; then
-    make install DESTDIR=/build/build.LibreELEC-H3.arm-11.0-devel/toolchain/armv7ve-libreelec-linux-gnueabihf/sysroot/ PREFIX=/usr -C lib
+    make install DESTDIR=/build/build.LibreELEC-H2-plus.arm-11.0-devel/toolchain/armv7ve-libreelec-linux-gnueabihf/sysroot/ PREFIX=/usr -C lib
   fi
 
   #cp ${PKG_BUILD}/contrib/lircd2toml.py ${INSTALL}/usr/bin/
@@ -60,9 +60,9 @@ post_makeinstall_target() {
 
 makeinstall_host() {
 
-  make install DESTDIR=/build/build.LibreELEC-H3.arm-11.0-devel/toolchain/armv7ve-libreelec-linux-gnueabihf/sysroot/ PREFIX=/usr -C lib
+  make install DESTDIR=/build/build.LibreELEC-H2-plus.arm-11.0-devel/toolchain/armv7ve-libreelec-linux-gnueabihf/sysroot/ PREFIX=/usr -C lib
   if [ "${LIBREELEC_VERSION}" == "devel" ]; then
-    make install DESTDIR=/build/build.LibreELEC-H3.arm-11.0-devel/toolchain/armv7ve-libreelec-linux-gnueabihf/sysroot PREFIX=/usr -C lib
+    make install DESTDIR=/build/build.LibreELEC-H2-plus.arm-11.0-devel/toolchain/armv7ve-libreelec-linux-gnueabihf/sysroot PREFIX=/usr -C lib
   fi
 
 }
